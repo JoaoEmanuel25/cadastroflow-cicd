@@ -1,0 +1,11 @@
+{
+  "name": "cadastro-clientes-cicd",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sistema de cadastro de clientes com pipeline CI/CD",
+  "scripts": {
+    "start": "npx serve . -l 8080",
+    "test": "node --test tests/*.test.js"
+  }
+}
