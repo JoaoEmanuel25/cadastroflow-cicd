@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sistema de cadastro de clientes" />
+    <title>CadastroFlow | Clientes</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><span>CF</span><strong>CadastroFlow</strong></div>
+      <div class="status"><i></i> Sistema disponível</div>
+    </header>
+
+    <main class="page">
+      <section class="intro">
+        <div>
+          <p class="eyebrow">GESTÃO DE CONTATOS</p>
+          <h1>Clientes organizados,<br /><em>trabalho mais simples.</em></h1>
+          <p>Cadastre, encontre e atualize os dados dos seus clientes em um só lugar.</p>
+        </div>
+        <div class="metric">
+          <span>Clientes cadastrados</span>
+          <strong id="total-clientes">0</strong>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card form-card">
+          <div class="card-title">
+            <div><small id="form-kicker">NOVO REGISTRO</small><h2 id="form-title">Cadastrar cliente</h2></div>
+          </div>
+          <form id="cliente-form" novalidate>
+            <input type="hidden" id="cliente-id" />
+            <label>Nome completo <span>*</span><input id="nome" name="nome" maxlength="80" placeholder="Ex.: Maria Oliveira" /></label>
+            <label>E-mail <span>*</span><input id="email" name="email" type="email" maxlength="120" placeholder="maria@email.com" /></label>
+            <label>Telefone <span>*</span><input id="telefone" name="telefone" maxlength="15" placeholder="(42) 99999-9999" /></label>
+            <label>Cidade <input id="cidade" name="cidade" maxlength="60" placeholder="Ex.: Porto União" /></label>
+            <div id="form-message" class="message" role="alert" aria-live="polite"></div>
+            <div class="actions">
+              <button class="button primary" type="submit" id="submit-button">Cadastrar cliente</button>
+              <button class="button ghost hidden" type="button" id="cancel-button">Cancelar edição</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="card list-card">
+          <div class="list-header">
+            <div><small>BASE DE CLIENTES</small><h2>Cadastros recentes</h2></div>
+            <input id="busca" type="search" placeholder="Buscar nome ou e-mail" aria-label="Buscar clientes" />
+          </div>
+          <div id="lista-clientes" class="customer-list"></div>
+          <div id="empty-state" class="empty-state">
+            <div>＋</div><h3>Nenhum cliente cadastrado</h3><p>Preencha o formulário para criar o primeiro registro.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>CadastroFlow · Projeto demonstrativo de CI/CD</footer>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
